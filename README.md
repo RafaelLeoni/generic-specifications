@@ -10,17 +10,16 @@ To install clone the project and then run the gradle build command:
 
 ## Operations
 This table shows a list of the current supported operations and the ones that still need implementation.
-| Operation | Code | Implemented |
-|--|--|--|
-| equal | : |	Yes |
-| not equal | !: |	No |
-| greater than | > |	Yes |
-| greater than or equal to | >= |	No |
-| less than | < |	Yes |
-| less than or equal to | <= |	No |
-| in | () |	No |
-| not in | !() |	No |
-| between | {} |	No |
-| like | [] |	No |
 
-
+| Operation				   | Code | Implemented |
+| ------------------------ | ---- | ----------- |
+| equal 				   | eq   |	Yes      	|
+| not equal 			   | neq  |	No			|
+| greater than 			   | gt	  |	Yes 		|
+| greater than or equal to | gte  |	No 			|
+| less than 			   | lt	  |	Yes 		|
+| less than or equal to	   | lte  |	No 			|
+| in 					   | in   |	No 			|
+| not in 				   | nin  |	No 			|
+| between 				   | btn  |	No 			|
+| like 					   | like |	No	 		|
