@@ -12,9 +12,9 @@ public enum FilterOperation {
 	GREATER_THAN_OR_EQUAL_TO(">="),
 	LESS_THAN("<"),
 	LESSTHAN_OR_EQUAL_TO("<="),
-	IN("{}"),
-	NOT_IN("!{}"),
-	BETWEEN("<>"),
+	IN("()"),
+	NOT_IN("!()"),
+	BETWEEN("{}"),
 	CONTAINS("[]");
 	
 	private String value;
