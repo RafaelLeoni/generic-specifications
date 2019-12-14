@@ -31,10 +31,15 @@ public class SpecificationsBuilder<T> {
  
     public SpecificationsBuilder<T> with(String query) {
     	params = new ArrayList<SearchCriteria>();
-    	Pattern pattern = Pattern.compile("(\\w+?)(:|<|>)(\\w+?),");
+    	Pattern pattern = Pattern.compile("(\\w+?):(\\w{2,4}):(.+?):(OR|AND),");
         Matcher matcher = pattern.matcher(query + ",");
         while (matcher.find()) {
-        	params.add(new SearchCriteria(matcher.group(1), matcher.group(2), matcher.group(3)));
+        	params.add(new SearchCriteria(
+        		matcher.group(1),
+        		matcher.group(2),
+        		matcher.group(3),
+        		matcher.group(4)
+        	));
         }
         return this;
     }
@@ -50,10 +55,11 @@ public class SpecificationsBuilder<T> {
          
         var result = specs.get(0);
  
-        for (int i = 1; i < specs.size(); i++) {
-			result = Specification.where(result).and(specs.get(i));
-			//TODO: Specification.where(result).or(specs.get(i)) :
-        }
+        for (int i = 1; i < params.size(); i++) {
+            result = params.get(i).isOrPredicate() ? 
+            	Specification.where(result).or(specs.get(i)) :
+                Specification.where(result).and(specs.get(i));
+        } 
         return result;
     }
 }

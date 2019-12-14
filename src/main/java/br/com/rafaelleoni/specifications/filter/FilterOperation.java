@@ -6,16 +6,16 @@ import br.com.rafaelleoni.specifications.exceptions.NotImplementedException;
 
 public enum FilterOperation {
 
-	EQUAL(":"),
-	NOT_EQUAL("!:"),
-	GREATER_THAN(">"),
-	GREATER_THAN_OR_EQUAL_TO(">="),
-	LESS_THAN("<"),
-	LESSTHAN_OR_EQUAL_TO("<="),
-	IN("()"),
-	NOT_IN("!()"),
-	BETWEEN("{}"),
-	CONTAINS("[]");
+	EQUAL("eq"),
+	NOT_EQUAL("neg"),
+	GREATER_THAN("gt"),
+	GREATER_THAN_OR_EQUAL_TO("gte"),
+	LESS_THAN("lt"),
+	LESSTHAN_OR_EQUAL_TO("lte"),
+	IN("in"),
+	NOT_IN("nin"),
+	BETWEEN("btn"),
+	CONTAINS("like");
 	
 	private String value;
 
